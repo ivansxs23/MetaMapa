@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/base :: html}"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<section th:fragment="contenido">
+  <div class="container mt-4">
+    <h2>Crear colección</h2>
+
+    <form th:action="@{/colecciones/crear}"
+          th:object="${coleccion}"
+          method="post">
+
+      <!-- Título -->
+      <div class="mb-3">
+        <label class="form-label">Título</label>
+        <input class="form-control" th:field="*{titulo}" required />
+      </div>
+
+      <!-- Descripción -->
+      <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <textarea class="form-control"
+                  th:field="*{descripcion}"
+                  rows="3"
+                  required></textarea>
+      </div>
+
+      <!-- Algoritmo -->
+      <div class="mb-3">
+        <label class="form-label">Algoritmo</label>
+        <select class="form-select" th:field="*{algoritmo}">
+          <option value="SIMPLE">Simple</option>
+          <option value="ABSOLUTA">Mayoría absoluta</option>
+          <option value="MULTIPLE_MENCION">Múltiples menciones</option>
+          <option value="NINGUNO">Ninguno</option>
+        </select>
+      </div>
+
+      <!-- Fuentes -->
+      <div class="mb-3">
+        <label class="form-label">Fuentes</label>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox"
+                 th:field="*{fuentes}"
+                 value="DATASET">
+          <label class="form-check-label">Dataset</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox"
+                 th:field="*{fuentes}"
+                 value="PROXY">
+          <label class="form-check-label">Proxy</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox"
+                 th:field="*{fuentes}"
+                 value="CONTRIBUYENTE">
+          <label class="form-check-label">Contribuyente</label>
+        </div>
+      </div>
+
+      <!-- CRITERIOS -->
+      <h5 class="mt-4 mb-2">Criterios de pertenencia</h5>
+
+      <div id="criterios-container"></div>
+
+      <button type="button"
+              class="btn btn-outline-primary btn-sm mt-2"
+              onclick="agregarCriterio()">
+        + Agregar criterio
+      </button>
+
+      <!-- Botones -->
+      <div class="mt-4 d-flex gap-2">
+        <button class="btn btn-primary" type="submit">
+          Crear colección
+        </button>
+        <a th:href="@{/colecciones}"
+           class="btn btn-outline-secondary">
+          Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- TEMPLATE CRITERIO -->
+  <div id="criterio-template"
+       class="criterio border rounded p-3 mb-3"
+       style="display:none">
+
+    <button type="button"
+            class="btn-close float-end"
+            onclick="this.parentElement.remove()"></button>
+
+    <!-- Tipo -->
+    <div class="mb-2">
+      <label class="form-label">Tipo de criterio</label>
+      <select class="form-select"
+              name="criterios[IDX].tipo"
+              onchange="toggleCampos(this)">
+        <option value="">Seleccione…</option>
+        <option value="categoria">Categoría</option>
+        <option value="provincia">Provincia</option>
+        <option value="fecha">Fecha</option>
+      </select>
+    </div>
+
+    <!-- CATEGORIA -->
+    <div class="criterio-categoria campos mt-2" style="display:none">
+      <label class="form-label">Categoría</label>
+      <select class="form-select"
+              name="criterios[IDX].idCategoria">
+        <option value="">Seleccione una categoría</option>
+        <option th:each="cat : ${categorias}"
+                th:value="${cat.id}"
+                th:text="${cat.nombre}">
+        </option>
+      </select>
+    </div>
+
+    <!-- PROVINCIA -->
+    <div class="criterio-provincia campos mt-2" style="display:none">
+      <label class="form-label">Provincia</label>
+      <input type="text"
+             class="form-control"
+             name="criterios[IDX].provincia">
+    </div>
+
+    <!-- FECHA -->
+    <div class="criterio-fecha campos mt-2" style="display:none">
+      <label class="form-label">Desde</label>
+      <input type="datetime-local"
+             class="form-control mb-2"
+             name="criterios[IDX].fechaDesde">
+
+      <label class="form-label">Hasta</label>
+      <input type="datetime-local"
+             class="form-control"
+             name="criterios[IDX].fechaHasta">
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    let criterioIndex = 0;
+
+    function agregarCriterio() {
+      const template = document.getElementById("criterio-template");
+      const clone = template.cloneNode(true);
+
+      clone.style.display = "block";
+      clone.id = "";
+      clone.innerHTML = clone.innerHTML.replaceAll("IDX", criterioIndex);
+
+      document.getElementById("criterios-container").appendChild(clone);
+      criterioIndex++;
+    }
+
+    function toggleCampos(select) {
+      const card = select.closest(".criterio");
+
+      card.querySelectorAll(".campos")
+              .forEach(c => c.style.display = "none");
+
+      if (select.value === "categoria")
+        card.querySelector(".criterio-categoria").style.display = "block";
+
+      if (select.value === "provincia")
+        card.querySelector(".criterio-provincia").style.display = "block";
+
+      if (select.value === "fecha")
+        card.querySelector(".criterio-fecha").style.display = "block";
+    }
+  </script>
+
+</section>
+</html>

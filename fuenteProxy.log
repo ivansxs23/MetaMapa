@@ -1,0 +1,22 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-12-22T00:14:14.399Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] a.e.utn.frba.dds.fuenteProxyApplication  : Starting fuenteProxyApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 9874 (/home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16/api-rest/fuenteProxy/target/fuenteProxy-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16)
+2025-12-22T00:14:14.411Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] a.e.utn.frba.dds.fuenteProxyApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-22T00:14:17.799Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-12-22T00:14:17.833Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-22T00:14:17.835Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-22T00:14:17.922Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-22T00:14:17.927Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3343 ms
+2025-12-22T00:14:20.457Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-12-22T00:14:20.616Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-12-22T00:14:20.651Z  INFO 9874 --- [servicio-fuente-proxy] [           main] [                                                 ] a.e.utn.frba.dds.fuenteProxyApplication  : Started fuenteProxyApplication in 7.373 seconds (process running for 8.848)
+2025-12-22T00:17:35.004Z  INFO 9874 --- [servicio-fuente-proxy] [ionShutdownHook] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-22T00:17:38.456Z  INFO 9874 --- [servicio-fuente-proxy] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

@@ -1,0 +1,76 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<div th:fragment="contenido" class="row">
+    <div class="col-12">
+        <div class="text-center py-5">
+            <div class="mb-4">
+                <i class="fas fa-server fa-5x text-danger"></i> <!-- Icono de servidor con color rojo/danger -->
+            </div>
+
+            <div class="mb-4">
+                <img src="/img/mascota500.jpg"
+                     alt="Robot preocupado por error 500"
+                     class="img-fluid" style="max-width: 300px;">
+            </div>
+
+            <h1 class="display-4 mb-4">
+                <span th:text="${titulo}">Error interno del servidor</span>
+            </h1>
+
+            <div class="alert alert-danger mx-auto" style="max-width: 600px;" th:if="${mensaje}">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <span th:text="${mensaje}">Ha ocurrido un problema inesperado. Por favor, inténtalo más tarde.</span>
+            </div>
+
+
+            <div class="d-flex justify-content-center gap-3">
+                <a th:href="@{/}" class="btn btn-primary">
+                    <i class="fas fa-home me-1"></i>
+                    Volver al inicio
+                </a>
+                <button class="btn btn-secondary" onclick="location.reload();">
+                    <i class="fas fa-sync-alt me-1"></i>
+                    Recargar página
+                </button>
+            </div>
+
+            <div class="mt-5">
+                <h5 class="text-muted mb-3">¿Qué puedes hacer?</h5>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-sync-alt fa-2x text-primary mb-2"></i>
+                                        <h6>Recargar la página</h6>
+                                        <small class="text-muted">A veces el problema es temporal</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-arrow-left fa-2x text-success mb-2"></i>
+                                        <h6>Volver Atrás</h6>
+                                        <small class="text-muted">Usa el botón atrás de tu navegador</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-envelope fa-2x text-info mb-2"></i>
+                                        <h6>Contactar Soporte</h6>
+                                        <small class="text-muted">Si persiste, avísanos para ayudarte</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

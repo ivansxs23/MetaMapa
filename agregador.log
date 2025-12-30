@@ -1,0 +1,1177 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-12-23T07:54:17.687Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.edu.utn.frba.dds.agregadorApplication  : Starting agregadorApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1659 (/home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16/api-rest/agregador/target/agregador-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16)
+2025-12-23T07:54:17.703Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.edu.utn.frba.dds.agregadorApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-23T07:54:24.970Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-23T07:54:25.390Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 394 ms. Found 7 JPA repository interfaces.
+2025-12-23T07:54:29.345Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-23T07:54:29.418Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-23T07:54:29.419Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-23T07:54:29.661Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-23T07:54:29.671Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11665 ms
+2025-12-23T07:54:37.755Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-23T07:54:38.105Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-12-23T07:54:38.259Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-23T07:54:40.179Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-23T07:54:40.304Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-23T07:54:41.035Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66a50c93
+2025-12-23T07:54:41.046Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-23T07:54:41.408Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-23T07:54:45.899Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-23T07:54:46.040Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table coleccion_tipo_fuente drop foreign key FKcqknh3mriwht5jh0u9o6a3k5c" via JDBC [Table 'metaData_db.coleccion_tipo_fuente' doesn't exist]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table coleccion_tipo_fuente drop foreign key FKcqknh3mriwht5jh0u9o6a3k5c" via JDBC [Table 'metaData_db.coleccion_tipo_fuente' doesn't exist]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:479) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:245) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:218) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:186) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:156) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:116) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:238) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at ar.edu.utn.frba.dds.agregadorApplication.main(agregadorApplication.java:12) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'metaData_db.coleccion_tipo_fuente' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar!/:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	... 46 common frames omitted
+
+2025-12-23T07:54:46.184Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "drop table if exists coleccion" via JDBC [Cannot drop table 'coleccion' referenced by a foreign key constraint 'FKafepqaknetwg6xyky48xc4h4g' on table 'coleccion_fuente'.]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "drop table if exists coleccion" via JDBC [Cannot drop table 'coleccion' referenced by a foreign key constraint 'FKafepqaknetwg6xyky48xc4h4g' on table 'coleccion_fuente'.]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropTables(SchemaDropperImpl.java:384) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:256) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:218) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:186) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:156) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:116) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:238) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at ar.edu.utn.frba.dds.agregadorApplication.main(agregadorApplication.java:12) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.sql.SQLException: Cannot drop table 'coleccion' referenced by a foreign key constraint 'FKafepqaknetwg6xyky48xc4h4g' on table 'coleccion_fuente'.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar!/:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	... 46 common frames omitted
+
+2025-12-23T07:54:46.438Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "create table coleccion (fecha_creacion datetime(6), id bigint not null auto_increment, ultima_fecha_importacion datetime(6), ultima_fecha_modificacion datetime(6), version bigint, algoritmo varchar(255), descripcion varchar(255), handle varchar(255), titulo varchar(255), primary key (id)) engine=InnoDB" via JDBC [Table 'coleccion' already exists]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table coleccion (fecha_creacion datetime(6), id bigint not null auto_increment, ultima_fecha_importacion datetime(6), ultima_fecha_modificacion datetime(6), version bigint, algoritmo varchar(255), descripcion varchar(255), handle varchar(255), titulo varchar(255), primary key (id)) engine=InnoDB" via JDBC [Table 'coleccion' already exists]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createTables(SchemaCreatorImpl.java:430) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createSequencesTablesConstraints(SchemaCreatorImpl.java:346) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:241) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:174) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:120) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:250) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar!/:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar!/:3.4.5]
+	at ar.edu.utn.frba.dds.agregadorApplication.main(agregadorApplication.java:12) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[agregador-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'coleccion' already exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:837) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:685) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar!/:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	... 46 common frames omitted
+
+2025-12-23T07:54:47.717Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+--- INICIANDO CARGA DE PROVINCIAS ---
+--- FIN CARGA: 24 provincias listas en memoria ---
+2025-12-23T07:54:49.550Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-23T07:54:52.939Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-23T07:54:53.017Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8c5c93a6-dee3-4262-b036-ad5a7a7d0747
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-12-23T07:54:53.107Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-12-23T07:54:54.399Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+=== CONFIGURANDO SECURITY ===
+2025-12-23T07:54:54.491Z  WARN 1659 --- [servicio-agregador] [           main] [                                                 ] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/colecciones/**, api/hechos/**, api/categorias, /auth/refresh, /auth/login, api/estadisticas, api/solicitudes/**, api/consensuar] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-12-23T07:54:56.396Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-23T07:54:56.452Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.edu.utn.frba.dds.agregadorApplication  : Started agregadorApplication in 41.054 seconds (process running for 43.722)
+Se han agregado 2 categorias de prueba a la base de datos.
+Datos iniciales cargados
+Se ha agregado 2 colecciones de prueba a la base de datos.
+2025-12-23T07:54:57.204Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Iniciando Importacion
+2025-12-23T07:55:15.147Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: CONTRIBUYENTE
+2025-12-23T07:55:27.349Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.f.estatica.FuenteEstatica      : FUENTE_ESTATICA: no hay hechos a importar
+2025-12-23T07:55:27.357Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: DATASET
+2025-12-23T07:56:12.268Z  INFO 1659 --- [servicio-agregador] [nio-8080-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-23T07:56:12.271Z  INFO 1659 --- [servicio-agregador] [nio-8080-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-23T07:56:12.815Z  INFO 1659 --- [servicio-agregador] [nio-8080-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 544 ms
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T07:56:14.779Z  WARN 1659 --- [servicio-agregador] [/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-12-23T07:56:14.779Z  WARN 1659 --- [servicio-agregador] [/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 5 spans due to WebClientRequestException(finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411)
+
+org.springframework.web.reactive.function.client.WebClientRequestException: finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.6.jar!/:6.2.6]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST http://localhost:9411/api/v2/spans [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.6.jar!/:6.2.6]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:325) ~[reactor-netty-http-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:595) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:541) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.fulfillConnectPromise(AbstractEpollChannel.java:679) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.finishConnect(AbstractEpollChannel.java:698) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.epollOutReady(AbstractEpollChannel.java:567) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:491) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender.postSpans(ZipkinWebClientSender.java:58) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411
+Caused by: java.net.ConnectException: finishConnect(..) failed: Connection refused
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:166) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.unix.Socket.finishConnect(Socket.java:359) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.doFinishConnect(AbstractEpollChannel.java:715) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.finishConnect(AbstractEpollChannel.java:692) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.epollOutReady(AbstractEpollChannel.java:567) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:491) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-12-23T07:56:39.387Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: PROXY
+2025-12-23T07:56:39.437Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Importacion finalizada
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Actualizacion finalizada
+2025-12-23T07:56:56.345Z  INFO 1659 --- [servicio-agregador] [           main] [                                                 ] a.e.u.f.d.s.impl.AgregadorService        : Colecciones actualizadas
+2025-12-23T07:56:56.363Z ERROR 1659 --- [servicio-agregador] [nio-8080-exec-2] [                                                 ] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [ar.edu.utn.frba.dds.entities.Coleccion#1]] with root cause
+
+org.hibernate.StaleObjectStateException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [ar.edu.utn.frba.dds.entities.Coleccion#1]
+	at org.hibernate.engine.jdbc.mutation.internal.ModelMutationHelper.identifiedResultsCheck(ModelMutationHelper.java:75) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.lambda$doStaticUpdate$9(UpdateCoordinatorStandard.java:785) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.ModelMutationHelper.checkResults(ModelMutationHelper.java:50) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:141) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.6.jar!/:6.2.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.6.jar!/:6.2.6]
+	at ar.edu.utn.frba.dds.services.impl.ColeccionService$$SpringCGLIB$$0.obtenerTodasColecciones(<generated>) ~[!/:0.0.1-SNAPSHOT]
+	at ar.edu.utn.frba.dds.controllers.ColeccionController.obtenerTodas(ColeccionController.java:28) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at ar.edu.utn.frba.dds.config.RateLimitingFilter.doFilter(RateLimitingFilter.java:53) ~[!/:0.0.1-SNAPSHOT]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at ar.edu.utn.frba.dds.config.IpAccessFilter.doFilter(IpAccessFilter.java:76) ~[!/:0.0.1-SNAPSHOT]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at ar.edu.utn.frba.dds.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T07:57:41.829Z  WARN 1659 --- [servicio-agregador] [nio-8080-exec-8] [694a4b752e26ea006d451eb3bd65564c-aa0b49894715abcd] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc2NzcxLCJleHAiOjE3NjY0Nzc2NzEsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.-K_FMh-Ur0t14A854g3cwaxAiK4NS0LWZ_m_sobHzW0
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:00:00.102Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Iniciando Importacion
+2025-12-23T08:00:06.827Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.f.dinamica.FuenteDinamica      : FUENTE_DINAMICA: no hay hechos a importar
+2025-12-23T08:00:06.827Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: CONTRIBUYENTE
+2025-12-23T08:00:11.091Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.f.estatica.FuenteEstatica      : FUENTE_ESTATICA: no hay hechos a importar
+2025-12-23T08:00:11.092Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: DATASET
+2025-12-23T08:00:16.694Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.dds.fuentes.proxy.FuenteProxy    : FUENTE_PROXY: no hay hechos a importar
+2025-12-23T08:00:16.700Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: PROXY
+2025-12-23T08:00:16.871Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Importacion finalizada
+Actualizacion finalizada
+2025-12-23T08:00:27.159Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4c009cfa7da0062f33c2326281fa-062f33c2326281fa] a.e.u.f.d.s.impl.AgregadorService        : Colecciones actualizadas
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc2NzcxLCJleHAiOjE3NjY0Nzc2NzEsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.-K_FMh-Ur0t14A854g3cwaxAiK4NS0LWZ_m_sobHzW0
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:10:00.093Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Iniciando Importacion
+2025-12-23T08:10:05.754Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.f.dinamica.FuenteDinamica      : FUENTE_DINAMICA: no hay hechos a importar
+2025-12-23T08:10:05.759Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: CONTRIBUYENTE
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:12:36.747Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: DATASET
+2025-12-23T08:12:42.237Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.dds.fuentes.proxy.FuenteProxy    : FUENTE_PROXY: no hay hechos a importar
+2025-12-23T08:12:42.237Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: PROXY
+2025-12-23T08:12:42.312Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Importacion finalizada
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Actualizacion finalizada
+2025-12-23T08:13:35.424Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a4e58f17461edb0d8e2b835abccdc-b0d8e2b835abccdc] a.e.u.f.d.s.impl.AgregadorService        : Colecciones actualizadas
+2025-12-23T08:13:35.496Z  WARN 1659 --- [servicio-agregador] [nio-8080-exec-4] [694a4f2621fdab74c8c172b3468c37a2-49fc5bf248364ab4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1213, SQLState: 40001
+2025-12-23T08:13:35.500Z ERROR 1659 --- [servicio-agregador] [nio-8080-exec-4] [694a4f2621fdab74c8c172b3468c37a2-49fc5bf248364ab4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Deadlock found when trying to get lock; try restarting transaction
+2025-12-23T08:13:35.607Z ERROR 1659 --- [servicio-agregador] [nio-8080-exec-4] [                                                 ] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.CannotAcquireLockException: could not execute statement [Deadlock found when trying to get lock; try restarting transaction] [update coleccion set algoritmo=?,descripcion=?,fecha_creacion=?,handle=?,titulo=?,ultima_fecha_importacion=?,ultima_fecha_modificacion=?,version=? where id=? and version=?]; SQL [update coleccion set algoritmo=?,descripcion=?,fecha_creacion=?,handle=?,titulo=?,ultima_fecha_importacion=?,ultima_fecha_modificacion=?,version=? where id=? and version=?]] with root cause
+
+com.mysql.cj.jdbc.exceptions.MySQLTransactionRollbackException: Deadlock found when trying to get lock; try restarting transaction
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:115) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1467) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084) ~[mysql-connector-j-9.1.0.jar!/:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar!/:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.13.Final.jar!/:6.6.13.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.6.jar!/:6.2.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.6.jar!/:6.2.6]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.6.jar!/:6.2.6]
+	at ar.edu.utn.frba.dds.services.impl.ColeccionService$$SpringCGLIB$$0.obtenerTodasColecciones(<generated>) ~[!/:0.0.1-SNAPSHOT]
+	at ar.edu.utn.frba.dds.controllers.ColeccionController.obtenerTodas(ColeccionController.java:28) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at ar.edu.utn.frba.dds.config.RateLimitingFilter.doFilter(RateLimitingFilter.java:53) ~[!/:0.0.1-SNAPSHOT]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at ar.edu.utn.frba.dds.config.IpAccessFilter.doFilter(IpAccessFilter.java:76) ~[!/:0.0.1-SNAPSHOT]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at ar.edu.utn.frba.dds.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:67) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:114) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc2NzcxLCJleHAiOjE3NjY0Nzc2NzEsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.-K_FMh-Ur0t14A854g3cwaxAiK4NS0LWZ_m_sobHzW0
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Criterios: [ar.edu.utn.frba.dds.entities.dto.input.Criterio.CriterioPorProvinciaDTO@23d7b9a2]
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Entrando solicitud:CREACION
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:20:00.047Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Iniciando Importacion
+2025-12-23T08:20:00.861Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: CONTRIBUYENTE
+2025-12-23T08:20:05.913Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.f.estatica.FuenteEstatica      : FUENTE_ESTATICA: no hay hechos a importar
+2025-12-23T08:20:05.914Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: DATASET
+2025-12-23T08:20:12.041Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.dds.fuentes.proxy.FuenteProxy    : FUENTE_PROXY: no hay hechos a importar
+2025-12-23T08:20:12.042Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: PROXY
+2025-12-23T08:20:12.063Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Importacion finalizada
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+false
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Actualizacion finalizada
+2025-12-23T08:20:59.239Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a50b08e3492454c75bc2f3c82a661-4c75bc2f3c82a661] a.e.u.f.d.s.impl.AgregadorService        : Colecciones actualizadas
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+false
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Entrando solicitud:CREACION
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+false
+2025-12-23T08:23:00.157Z  INFO 1659 --- [servicio-agregador] [nio-8080-exec-1] [                                                 ] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x03d0xc00xf0B;0xa30x9e0xfb0x0b0xdf0xa00x120xb3b0x9cy0xc20x1e0x0b0x9b0xa7h|0x030x06zL>0xb50xae0x0d0x8d ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+false
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Entrando solicitud:ELIMINACION
+Creando Solicitud de eliminacion
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+false
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Entrando solicitud:ELIMINACION
+Creando Solicitud de eliminacion
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6ImF1dGgtc2VydmVyIiwiaWF0IjoxNzY2NDc3NzAzLCJleHAiOjE3NjY0Nzg2MDMsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbIkNSRUFSX0hFQ0hPIiwiRURJVEFSX0hFQ0hPIl19.VXn_RmbdIq0ekmfXMlTZXtCGw3VG-LXY5TBOAg2rDfY
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:30:00.042Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Iniciando Importacion
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:30:04.440Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: CONTRIBUYENTE
+2025-12-23T08:30:08.172Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.f.estatica.FuenteEstatica      : FUENTE_ESTATICA: no hay hechos a importar
+2025-12-23T08:30:08.172Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: DATASET
+2025-12-23T08:30:14.949Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.dds.fuentes.proxy.FuenteProxy    : FUENTE_PROXY: no hay hechos a importar
+2025-12-23T08:30:14.954Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Importacion de hecho exitosa: PROXY
+2025-12-23T08:30:15.087Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Importacion finalizada
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+Actualizacion finalizada
+2025-12-23T08:30:59.951Z  INFO 1659 --- [servicio-agregador] [   scheduling-1] [694a5308c6b08efe25db6b38e7dea371-25db6b38e7dea371] a.e.u.f.d.s.impl.AgregadorService        : Colecciones actualizadas
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+=== FILTRANDO PETICIÓN JWT ===
+No hay token de autorización
+2025-12-23T08:33:56.311Z  INFO 1659 --- [servicio-agregador] [ionShutdownHook] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-23T08:33:59.092Z  INFO 1659 --- [servicio-agregador] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-23T08:34:19.858Z  INFO 1659 --- [servicio-agregador] [ionShutdownHook] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T08:34:21.354Z  INFO 1659 --- [servicio-agregador] [ionShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-23T08:34:22.180Z  INFO 1659 --- [servicio-agregador] [ionShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

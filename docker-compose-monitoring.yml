@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # -----------------------------------------------------------
+  # 1. INFRAESTRUCTURA DE OBSERVABILIDAD
+  # -----------------------------------------------------------
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    restart: always # Si Zipkin se cae, Docker lo levanta siempre
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always # Resiliencia para el monitor
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+      - zipkin
+    restart: always
+
+  # -----------------------------------------------------------
+  # 2. APLICACIÓN JAVA
+  # -----------------------------------------------------------
+  # Esta sección simula cómo se ve el backend cuando esta desplegado
+  mi-backend-agregador:
+    container_name: backend-agregador
+    # Cuando tengas el Dockerfile, descomentas la línea 'build'
+    # build: ./backend
+    image: openjdk:17-jdk-slim # Imagen temporal de ejemplo
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+
+    # --- REQUERIMIENTO: MONITOREO PROACTIVO DE SALUD ---
+    healthcheck:
+      # Docker ejecuta este comando dentro del contenedor para ver si está vivo
+      test: "curl -f http://localhost:8080/actuator/health || exit 1"
+      interval: 30s       # Revisa cada 30 segundos
+      timeout: 10s        # Si tarda más de 10s en responder, falla
+      retries: 3          # Si falla 3 veces seguidas... MARCA "UNHEALTHY"
+      start_period: 40s   # Da 40s de gracia al inicio para que Java arranque
+
+    # --- REQUERIMIENTO: POLÍTICA DE AUTO-RESTART ---
+    # Si el healthcheck marca fallo o la app crashea, Docker la reinicia sola.
+    restart: on-failure:3

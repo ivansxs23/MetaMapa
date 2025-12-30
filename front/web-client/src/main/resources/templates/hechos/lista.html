@@ -1,0 +1,65 @@
+<section th:fragment="hechos(listaHechos, coleccionId)">
+    <div th:if="${#lists.isEmpty(listaHechos)}">No hay hechos para esta colección.</div>
+    <div th:each="hecho : ${listaHechos}" class="card w-100 mb-3 shadow border-1">
+        <div class="card-body position-relative">
+            <div class="d-flex justify-content-end mt-1">
+                <span class="badge bg-primary" th:text="${hecho.categoria.nombre}">Categoría x</span>
+            </div>
+
+            <!-- Título y anónimo -->
+            <div class="d-flex align-items-center justify-content-between">
+                <h5 class="card-title mb-1 fw-semibold" th:text="${hecho.titulo}">Título del hecho</h5>
+                <span class="badge bg-secondary"
+                      th:if="${hecho.esAnonimo}"
+                      title="Reportado de forma anónima">
+          Anónimo
+        </span>
+            </div>
+
+            <!-- Descripción -->
+            <p class="card-text text-muted mt-2 mb-3" th:text="${hecho.descripcion}">
+                Descripción breve del hecho...
+            </p>
+
+            <!-- Provincia y fecha -->
+            <div class="d-flex flex-wrap gap-3 small text-muted">
+                <div>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span th:text="${hecho.provincia} ?: 'Sin provincia'">Buenos Aires</span>
+                </div>
+                <div>
+                    <i class="bi bi-calendar-event"></i>
+                    <span th:text="${#temporals.format(hecho.fechaAcontecimiento, 'dd/MM/yyyy HH:mm')}"></span>
+
+
+                </div>
+            </div>
+
+            <!-- Origen -->
+            <div class="mt-3">
+                <small class="text-muted d-block mb-1">Origen</small>
+                <span th:if="${#lists.isEmpty(hecho.origen)}" class="text-muted small">Sin origen</span>
+                <div th:if="${!#lists.isEmpty(hecho.origen)}" class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-info text-dark"
+                        th:each="origen : ${hecho.origen}"
+                        th:text="${origen.tipoFuente} +  ' · ' + ${origen.raiz}">
+                    Tipo · Nombre
+                  </span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <a th:if="${coleccionId != null}"
+                   th:href="@{'/colecciones/' + ${coleccionId} + '/hechos/' + ${hecho.id}}"
+                   class="btn btn-sm btn-primary">
+                    Ver
+                </a>
+            </div>
+            <div th:if="${coleccionId == null}" class="d-flex justify-content-end mt-3">
+                <a th:href="@{'/hechos/' + ${hecho.id}}" class="btn btn-sm btn-primary">
+                    Ver
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,16 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<section th:fragment="contenido" id="view-landing" class="py-5">
+    <div class="row align-items-center">
+        <!-- Columna izquierda: título y texto -->
+        <div th:replace="home/landing_title :: title"></div>
+
+        <!-- Columna derecha: imagen -->
+        <div th:replace="home/landing_imagen :: imagen"></div>
+    </div>
+
+        <!-- Cards debajo -->
+    <div th:replace="home/landing_hechos :: hechos(colecciones=${colecciones})"></div>
+
+
+</section>
+</html>

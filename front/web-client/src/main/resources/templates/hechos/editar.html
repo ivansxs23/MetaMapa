@@ -1,0 +1,93 @@
+<html th:replace="~{layout/base :: html}" lang="es" xmlns:th="http://www.thymeleaf.org">
+<div class="col-md-6" th:fragment="contenido">
+    <div class="card p-4">
+        <h3>Editar hecho</h3>
+        <form th:action="@{/hechos/{id}/editar(id=${id})}" th:object="${hecho}" method="post">
+
+
+        <!-- Título -->
+            <div class="mb-3">
+                <label for="c-titulo" class="form-label">Título *</label>
+                <input id="c-titulo" th:field="*{titulo}" class="form-control" th:classappend="${#fields.hasErrors('titulo')}" required placeholder="Descripción breve" />
+                <div th:if="${#fields.hasErrors('titulo')}" class="text-danger">
+                    <small th:errors="*{titulo}">Error en titulo</small>
+                </div>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-3">
+                <label for="c-desc" class="form-label">Descripción *</label>
+                <textarea id="c-desc" th:field="*{descripcion}" class="form-control" th:classappend="${#fields.hasErrors('descripcion')}" rows="3" required placeholder="Detalles, contexto y observaciones"></textarea>
+                <div th:if="${#fields.hasErrors('descripcion')}" class="text-danger">
+                    <small th:errors="*{descripcion}">Error en descripcion</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Categoría -->
+                <div class="col-md-6 mb-3">
+                    <label for="categoria" class="form-label">Categoría *</label>
+                    <select id="categoria" th:field="*{idCategoria}" class="form-select" th:classappend="${#fields.hasErrors('idCategoria')}" required>
+                        <option th:value="null">Seleccione</option>
+                        <option th:each="c : ${categorias}" th:value="${c.id}" th:text="${c.nombre}">Categoria</option>
+                    </select>
+                    <div th:if="${#fields.hasErrors('idCategoria')}" class="text-danger">
+                        <small th:errors="*{idCategoria}">Error en categoria</small>
+                    </div>
+                </div>
+
+                <!-- Fecha -->
+                <div class="col-md-6 mb-3">
+                    <label for="c-fecha" class="form-label">Fecha *</label>
+                    <input id="c-fecha" type="datetime-local" th:field="*{fechaAcontecimiento}" class="form-control" th:classappend="${#fields.hasErrors('fechaAcontecimiento')}" required />
+                    <div th:if="${#fields.hasErrors('fechaAcontecimiento')}" class="text-danger">
+                        <small th:errors="*{fechaAcontecimiento}">Error en fechaAcontecimiento</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campos de coordenadas -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="c-lat" class="form-label">Latitud *</label>
+                    <input id="c-lat" type="number" step="any" th:field="*{latitud}" class="form-control" th:classappend="${#fields.hasErrors('latitud')}" placeholder="-34.6037" required />
+                    <div th:if="${#fields.hasErrors('latitud')}" class="text-danger">
+                        <small th:errors="*{latitud}">Error en latitud</small>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="c-long" class="form-label">Longitud *</label>
+                    <input id="c-long" type="number" step="any" th:field="*{longitud}" class="form-control" th:classappend="${#fields.hasErrors('longitud')}" placeholder="-58.3816" required/>
+                    <div th:if="${#fields.hasErrors('longitud')}" class="text-danger">
+                        <small th:errors="*{longitud}">Error en longitud</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field="*{esAnonimo}" th:classappend="${#fields.hasErrors('esAnonimo')}" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Anónimo</label>
+                <div th:if="${#fields.hasErrors('esAnonimo')}" class="text-danger">
+                    <small th:errors="*{esAnonimo}">Error en esAnonimo</small>
+                </div>
+            </div>
+
+            <!-- Multimedia -->
+            <div class="col-md-6 mb-3">
+                <label for="c-media" class="form-label">Multimedia</label>
+                <input id="c-media" type="file" class="form-control" accept="image/*,video/*" />
+                <div class="form-text">
+                    Se aceptan imágenes y videos. Tamaño máximo: 25MB.
+                </div>
+            </div>
+            <div class="mb-3">
+
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary" >Editar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</html>

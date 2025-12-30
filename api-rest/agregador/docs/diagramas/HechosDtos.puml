@@ -1,0 +1,62 @@
+@startuml
+
+package Agregador{
+
+  class Hecho {
+    Long id
+    Boolean vigente
+    String titulo
+    String descripcion
+    Categoria categoria
+    List<Etiqueta> etiquetas
+    Double latitud
+    Double longitud
+    LocalDate fechaAcontecimiento
+    LocalDate fechaCarga
+    Origen origenHecho
+    Usuario usuario
+    Boolean esAnonimo
+  }
+}
+  class HechoDinamicoDto {
+    Long id
+    Boolean vigente
+    String titulo
+    String descripcion
+    Categoria categoria
+    Double latitud
+    Double longitud
+    LocalDate fechaAcontecimiento
+    LocalDate fechaCarga
+    Usuario usuario
+    Boolean esAnonimo
+  }
+
+  class HechoEstaticoDto {
+    Long id
+    String titulo
+    String descripcion
+    Categoria categoria
+    double latitud
+    double longitud
+    LocalDate fechaAcontecimiento
+    LocalDate fechaCarga
+  }
+
+  class HechoProxyDto {
+    Long id
+    String titulo
+    String descripcion
+    String categoria
+    Float latitud
+    Float longitud
+    String fecha_hecho
+    String created_at
+    String updated_at
+  }
+
+  HechoDinamicoDto --> Hecho
+  HechoEstaticoDto --> Hecho
+  HechoProxyDto --> Hecho
+
+@enduml

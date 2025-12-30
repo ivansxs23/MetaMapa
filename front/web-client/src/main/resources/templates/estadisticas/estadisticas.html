@@ -1,0 +1,18 @@
+
+<html th:replace="~{layout/base ::html}" lang="es">
+<section th:fragment="contenido" id="view-administrador" class="py-5">
+    <div class="row g-3">
+
+        <!-- Panel principal -->
+        <div th:replace="estadisticas/estadisticas_titulo :: titulo"></div>
+
+        <!-- Resumen -->
+        <div th:replace="estadisticas/estadisticas_conteo :: conteo"></div>
+
+        <!-- estadisticas generales -->
+
+        <div th:replace="estadisticas/detalle_estadisticas :: detalle"></div>
+
+    </div>
+</section>
+</html>

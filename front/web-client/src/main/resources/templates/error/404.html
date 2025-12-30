@@ -1,0 +1,70 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<div th:fragment="contenido" class="row">
+    <div class="col-12">
+        <div class="text-center py-5">
+            <div class="mb-4">
+                <i class="fas fa-exclamation-triangle fa-5x text-warning"></i>
+            </div>
+
+            <div class="mb-4">
+                <img src="/img/mascota404.png" alt="Mascota perdida"
+                     class="img-fluid" style="max-width: 250px;">
+            </div>    
+            
+            <h1 class="display-4 mb-4">
+                <span th:text="${titulo}">No encontrado</span>
+            </h1>
+
+            <div class="alert alert-warning mx-auto" style="max-width: 600px;" th:if="${mensaje}">
+                <i th:text="${mensaje}" class="fas fa-info-circle me-2"></i>
+            </div>
+            
+
+            <div class="d-flex justify-content-center gap-3">
+                <a th:href="@{/}" class="btn btn-primary">
+                    <i class="fas fa-home me-1"></i>
+                    Volver al inicio
+                </a>
+            </div>
+
+            <div class="mt-5">
+                <h5 class="text-muted mb-3">¿Qué puedes hacer?</h5>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-search fa-2x text-primary mb-2"></i>
+                                        <h6>Verificar URL</h6>
+                                        <small class="text-muted">Asegúrate de que la dirección sea correcta</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-arrow-left fa-2x text-success mb-2"></i>
+                                        <h6>Volver Atrás</h6>
+                                        <small class="text-muted">Usa el botón atrás de tu navegador</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-home fa-2x text-info mb-2"></i>
+                                        <h6>Ir al Inicio</h6>
+                                        <small class="text-muted">Regresa a la página principal</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,11 @@
+<section th:fragment="csv" class="col-12">
+    <form method="POST" th:action="@{/panel/subir-csv}" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="archivoInput" class="form-label">Cargar Archivo CSV</label>
+            <input class="form-control" type="file" id="archivoInput" name="archivoCSV" accept=".csv">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Subir Archivo</button>
+    </form>
+</section>

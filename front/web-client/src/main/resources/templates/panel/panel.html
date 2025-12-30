@@ -1,0 +1,20 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<section th:fragment="contenido" id="view-administrador" class="py-5">
+    <div class="row g-3">
+
+        <!-- Panel principal -->
+        <div th:replace="panel/panel_titulo :: titulo"></div>
+
+        <!-- Colecciones -->
+        <div th:replace="panel/panel_colecciones :: colecciones"></div>
+
+        <!-- Fuentes
+        <div th:replace="panel/panel_fuentes :: fuentes"></div>
+        -->
+        <!-- SOLICITUDES DE ELIMINACIÓN -->
+        <div th:replace="panel/panel_solicitudes :: solicitudes"></div>
+
+        <div th:replace="panel/panel_csv :: csv"></div>
+    </div>
+</section>
+</html>

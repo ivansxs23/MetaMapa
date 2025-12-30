@@ -1,0 +1,27 @@
+<!-- home/landing_content.html -->
+<div class="col-lg-6 mb-4" th:fragment="title">
+        <h1 id="landing-title" class="display-5 fw-bold">
+            MetaMapa: hechos en contexto
+        </h1>
+        <p class="lead">
+            MetaMapa organiza, visualiza y valida hechos geolocalizados a través de colecciones y fuentes configurables.
+            Accedé a información curada o navegá sin restricciones para explorar datos en crudo.
+        </p>
+
+        <h3 class="h5 mt-4">Objetivos</h3>
+        <ul class="list-unstyled ms-3">
+            <li>✔ Transparencia y trazabilidad de fuentes.</li>
+            <li>✔ Visualización geográfica interactiva.</li>
+            <li>✔ Consenso configurable por colección.</li>
+        </ul>
+
+        <div class="d-flex gap-2 mt-3">
+            <a th:href="@{/hechos}" class="btn btn-primary">Ver hechos</a>
+            <a th:href="@{/hechos/crear}" class="btn btn-secondary">Contribuir</a>
+        </div>
+
+        <p class="text-muted small mt-3">
+            Acceso público: podés explorar colecciones y abrir detalles de hechos
+            <strong>sin iniciar sesión</strong>.
+        </p>
+    </div>

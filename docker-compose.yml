@@ -1,0 +1,127 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-dds
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: dds_db
+      MYSQL_USER: dds_user
+      MYSQL_PASSWORD: dds_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "dds_user", "--password=dds_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  servicio-agregador:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: agregador/target/agregador
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8080
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  auth:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: auth/target/auth-usuario
+    ports:
+      - "8085:8085"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8085
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  servicio-estadisticas:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: estadisticas/target/estadisticas
+    ports:
+      - "8089:8089"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8089
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  servicio-fuente-dinamica:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: fuente-dinamica/target/fuente-dinamica
+    ports:
+      - "8081:8081"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8081
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  servicio-fuente-estatica:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: fuente-estatica/target/fuente-estatica
+    ports:
+      - "8082:8082"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8082
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  servicio-fuente-proxy:
+    build:
+      context: ./api-rest
+      args:
+        JAR_PATH: fuente-proxy/target/fuente-proxy
+    ports:
+      - "8083:8083"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - SERVER_PORT=8083
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/dds_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=dds_user
+      - SPRING_DATASOURCE_PASSWORD=dds_password
+
+  web-client:
+    build:
+      context: ./front/web-client
+    ports:
+      - "80:8087"
+    depends_on:
+      - servicio-agregador
+    environment:
+      - SERVER_PORT=8087
+
+volumes:
+  mysql-data:

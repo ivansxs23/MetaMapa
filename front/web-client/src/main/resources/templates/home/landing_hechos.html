@@ -1,0 +1,26 @@
+<section th:fragment="hechos(colecciones)" class="mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4 align-items-stretch">
+        <div class="col" th:each="coleccion : ${colecciones}">
+            <div class="card h-100 shadow-sm d-flex flex-column">
+                <div class="card-body d-flex flex-column">
+                    <th:block th:switch="${coleccion.algoritmo}">
+                  <span th:case="'SIMPLE'" class="badge bg-success">
+                    Mayoria simple
+                  </span>
+                  <span th:case="'ABSOLUTA'" class="badge bg-warning">Mayoria absoluta
+                  </span>
+                      <span th:case="'MULTIPLE_MENCION'" class="badge bg-success">Multiples menciones
+                  </span>
+                  <span th:case="*" class="badge bg-secondary">Ningun algoritmo
+                  </span>
+                    </th:block>
+
+                    <h5 class="card-title" th:text="${coleccion.titulo}">Título de la colección</h5>
+                    <p class="card-text flex-grow-1" th:text="${coleccion.descripcion}">Descripción de la colección</p>
+                    <a class="btn btn-sm btn-primary mt-auto"
+                       th:href="@{/colecciones/{id}(id=${coleccion.id})}">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

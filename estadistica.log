@@ -1,0 +1,236 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-12-23T07:54:07.817Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] a.e.utn.frba.dds.estadisticaApplication  : Starting estadisticaApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1622 (/home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16/api-rest/estadistica/target/estadistica-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16)
+2025-12-23T07:54:07.827Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] a.e.utn.frba.dds.estadisticaApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-23T07:54:11.174Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-23T07:54:11.513Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 308 ms. Found 1 JPA repository interface.
+2025-12-23T07:54:13.359Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8089 (http)
+2025-12-23T07:54:13.419Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-23T07:54:13.420Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-23T07:54:13.545Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-23T07:54:13.548Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5545 ms
+2025-12-23T07:54:17.328Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-23T07:54:17.626Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-12-23T07:54:17.793Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-23T07:54:19.552Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-23T07:54:19.681Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-23T07:54:20.466Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36349e29
+2025-12-23T07:54:20.471Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-23T07:54:20.856Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-23T07:54:24.784Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-23T07:54:25.562Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T07:54:27.323Z  WARN 1622 --- [servicio-estadisticas] [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-23T07:54:32.000Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-12-23T07:54:33.009Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8089 (http) with context path '/'
+2025-12-23T07:54:33.150Z  INFO 1622 --- [servicio-estadisticas] [           main] [                                                 ] a.e.utn.frba.dds.estadisticaApplication  : Started estadisticaApplication in 27.652 seconds (process running for 30.77)
+2025-12-23T08:15:11.081Z  INFO 1622 --- [servicio-estadisticas] [nio-8089-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-23T08:15:11.260Z  INFO 1622 --- [servicio-estadisticas] [nio-8089-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-23T08:15:11.984Z  INFO 1622 --- [servicio-estadisticas] [nio-8089-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 719 ms
+2025-12-23T08:15:18.930Z  WARN 1622 --- [servicio-estadisticas] [/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2025-12-23T08:15:18.930Z  WARN 1622 --- [servicio-estadisticas] [/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 1 spans due to WebClientRequestException(finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411)
+
+org.springframework.web.reactive.function.client.WebClientRequestException: finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.6.jar!/:6.2.6]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST http://localhost:9411/api/v2/spans [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.6.jar!/:6.2.6]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:325) ~[reactor-netty-http-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:595) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:541) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.5.jar!/:1.2.5]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.fulfillConnectPromise(AbstractEpollChannel.java:679) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.finishConnect(AbstractEpollChannel.java:698) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.epollOutReady(AbstractEpollChannel.java:567) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:491) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.7.5.jar!/:3.7.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender.postSpans(ZipkinWebClientSender.java:58) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-actuator-autoconfigure-3.4.5.jar!/:3.4.5]
+		at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.4.3.jar!/:na]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: localhost/127.0.0.1:9411
+Caused by: java.net.ConnectException: finishConnect(..) failed: Connection refused
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:166) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.unix.Socket.finishConnect(Socket.java:359) ~[netty-transport-native-unix-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.doFinishConnect(AbstractEpollChannel.java:715) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.finishConnect(AbstractEpollChannel.java:692) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.epollOutReady(AbstractEpollChannel.java:567) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:491) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.119.Final.jar!/:4.1.119.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Datos recibidos: ar.edu.utn.frba.dds.entities.dto.input.EstadisticasInputDTO@169e8d47
+0,262,Alud
+0,237,Aluvión de tierra y rocas
+0,234,Anegamiento masivo
+0,208,Avalancha de lodo
+0,1,Caída de aeronave
+0,250,Caída de ceniza
+0,230,Calor extremo
+0,232,Congelamiento
+0,210,Contaminación por ceniza volcánica
+0,217,Copiosa caída de nieve
+0,205,Corrimiento de tierra
+0,182,Crecida de aguas subterráneas
+0,184,Crecida histórica
+0,192,Crisis hídrica
+0,237,Déficit hídrico
+0,244,Derrumbe de cerro
+0,213,Desborde de arroyo
+0,179,Desborde de río
+0,202,Deslizamiento de tierra
+0,193,Desprendimiento de ladera
+0,261,Embudo de viento
+0,208,Emergencia por altas temperaturas
+0,249,Emergencia por sequía
+0,244,Emisión volcánica
+0,253,Escasez de agua
+0,229,Evento sísmico
+0,225,Fenómeno de calor intenso
+0,253,Fenómeno de frío intenso
+0,267,Fenómeno de viento rotativo
+0,226,Fenómeno meteorológico con granizo
+0,198,Frente tormentoso
+0,205,Frío extremo
+0,206,Fuego arrasador en zona boscosa
+0,214,Fuego en área protegida
+0,220,Fuego en bosque nativo
+0,229,Granizada destructiva
+0,232,Granizo de gran tamaño
+0,246,Helada destructiva
+0,204,Helada fuera de temporada
+0,201,Helada severa
+0,194,Incendio en reserva natural
+0,204,Incendio en zona de monte
+0,195,Incendio forestal
+0,221,Inundación en zona urbana
+0,195,Inundación por lluvias intensas
+0,199,Inundación repentina
+0,228,Lluvia de ceniza volcánica
+0,227,Lluvia de hielo
+0,211,Lluvia torrencial
+0,247,Manga de viento
+0,221,Movimiento telúrico
+0,207,Nevada extrema
+0,157,Nevada fuera de temporada
+0,185,Nevada histórica
+0,171,Nevazón
+0,223,Nube de ceniza
+0,241,Ola de calor extremo
+0,225,Polvo volcánico en suspensión
+0,202,Precipitación de granizo
+0,239,Precipitación de material volcánico
+0,213,Precipitación de nieve
+0,202,Quema de pastizales
+0,189,Quema descontrolada
+0,215,Ráfagas de más de 100 km/h
+0,250,Ráfagas destructivas
+0,227,Récord histórico de calor
+0,253,Remolino de aire
+0,231,Réplica sísmica
+0,210,Sequía con pérdidas agrícolas
+0,268,Sequía extrema
+0,210,Sequía prolongada
+0,247,Sismo con epicentro local
+0,232,Sismo de gran magnitud
+0,205,Temblor
+0,277,Temperaturas bajo cero
+0,214,Temperaturas récord
+0,221,Temperaturas sofocantes
+0,200,Temporal
+0,237,Temporal de viento
+0,243,Terremoto destructivo
+0,217,Torbellino
+0,158,Tormenta con fuertes vientos
+0,237,Tormenta con piedras de granizo
+0,201,Tormenta de granizo
+0,214,Tormenta de nieve
+0,269,Tormenta de viento
+0,213,Tormenta eléctrica
+0,205,Tormenta severa
+0,208,Tormenta tropical
+0,281,Tornado
+0,423,Vendaval
+0,221,Ventisca con nieve
+0,242,Vientos con fuerza ciclónica
+0,243,Vientos huracanados
+2025-12-23T08:34:14.605Z  INFO 1622 --- [servicio-estadisticas] [ionShutdownHook] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-23T08:34:18.785Z  INFO 1622 --- [servicio-estadisticas] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-23T08:34:40.869Z  INFO 1622 --- [servicio-estadisticas] [ionShutdownHook] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T08:34:41.080Z  INFO 1622 --- [servicio-estadisticas] [ionShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-23T08:34:41.264Z  INFO 1622 --- [servicio-estadisticas] [ionShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

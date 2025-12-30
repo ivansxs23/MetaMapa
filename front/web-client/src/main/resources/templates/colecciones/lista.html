@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/base :: html}" xmlns:th="http://www.thymeleaf.org" lang="es"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<section th:fragment="contenido">
+
+        <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap gap-2">
+            <div>
+                <h2 class="mb-1">Colecciones disponibles</h2>
+            </div>
+            <div class="d-flex gap-2">
+                <a th:href="@{/}" class="btn btn-outline-secondary btn-sm">← Volver</a>
+            </div>
+        </div>
+
+        <div class="list-group shadow-sm">
+            <div th:each="coleccion : ${colecciones}"
+                 class="list-group-item d-flex justify-content-between align-items-center flex-wrap py-3">
+
+                <div class="flex-grow-1 me-3">
+                    <h5 class="mb-1" th:text="${coleccion.titulo}">Título de la colección</h5>
+                    <p class="mb-1 text-muted small" th:text="${coleccion.descripcion}">Descripción breve.</p>
+
+                    <div class="small text-secondary">
+                        <span>
+                            <strong>Algoritmo:</strong>
+                            <span th:text="${coleccion.algoritmo}">Algoritmo</span>
+                        </span>
+
+                        <div class="text-secondary">
+                            <strong>Fuentes:</strong>
+                            <span class="d-inline-flex flex-wrap gap-1 align-middle ms-1">
+                                <span th:each="f : ${coleccion.fuentes}"
+                                      class="badge rounded-pill text-bg-light border"
+                                      th:text="${f}">
+                                    Fuente
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="d-flex gap-2">
+                    <a th:href="@{|/colecciones/${coleccion.id}|}" class="btn btn-primary">Ver detalles</a>
+                    <button sec:authorize="hasRole('ADMIN')" type="button"
+                            class="btn btn-primary"
+                            th:onclick="|window.location.href='/colecciones/${coleccion.id}/editar'|">
+                        Editar
+                    </button>
+                </div>
+            </div>
+        </div>
+</section>
+</html>

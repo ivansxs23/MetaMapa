@@ -1,0 +1,42 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-12-23T07:28:16.796Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] a.e.u.f.dds.fuenteEstaticaApplication    : Starting fuenteEstaticaApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 2280 (/home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16/api-rest/fuenteEstatica/target/fuenteEstatica-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/.ssh/2025-tpa-ma-ma-grupo-16)
+2025-12-23T07:28:16.808Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] a.e.u.f.dds.fuenteEstaticaApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-12-23T07:28:19.864Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-23T07:28:20.238Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 350 ms. Found 3 JPA repository interfaces.
+2025-12-23T07:28:21.787Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-12-23T07:28:21.828Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-23T07:28:21.829Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-23T07:28:21.898Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-23T07:28:21.900Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4887 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-12-23T07:28:23.459Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-23T07:28:23.608Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-12-23T07:28:23.681Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-23T07:28:24.371Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-23T07:28:24.429Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-23T07:28:24.849Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5847010
+2025-12-23T07:28:24.851Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-23T07:28:25.016Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-23T07:28:26.791Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-23T07:28:27.464Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T07:28:28.803Z  WARN 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-23T07:28:30.377Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-12-23T07:28:30.810Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-12-23T07:28:30.846Z  INFO 2280 --- [servicio-fuente-estatica] [           main] [                                                 ] a.e.u.f.dds.fuenteEstaticaApplication    : Started fuenteEstaticaApplication in 15.284 seconds (process running for 16.576)

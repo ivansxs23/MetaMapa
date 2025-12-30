@@ -1,0 +1,207 @@
+Boo@startuml
+
+' ===== INTERFACES =====
+
+interface Fuente {
+  +importarHechos(): Mono<List<Hecho>>
+  +getTipoFuente(): TipoFuente
+}
+
+interface AlgoritmoDeConsenso {
+  +ConsensuarHechos(coleccion: Coleccion): void
+}
+
+interface DetectorDeSpam {
+  +esSpam(texto: String): boolean
+}
+
+interface ICategoriaService {
+  +crearSiNoExiste(nombre: String): Categoria
+}
+
+' ===== ENUMS =====
+enum TipoFuente {
+  DATASET
+  PROXY
+  CONTRIBUYENTE
+}
+
+enum TipoAlgoritmo {
+  ABSOLUTA
+  SIMPLE
+  MULTIPLE_MENCION
+  NINGUNO
+}
+
+enum Estado {
+  PENDIENTE
+  APROBADA
+  DENEGADA
+}
+
+' ===== CLASES =====
+
+class Coleccion {
+  -id: Long
+  -handle: String
+  -titulo: String
+  -descripcion: String
+  -fuentes: List<Fuente>
+  -criteriosDePertenencia: List<CriterioDePertenencia>
+  -algoritmo: AlgoritmoDeConsenso
+  -ColeccionHecho: List<ColeccionHecho>
+  +Coleccion()
+  +agregarHecho(hecho: Hecho): void
+  +quitarHecho(hechos: Hecho...): void
+  +agregarFuente(fuente: Fuente): void
+}
+class ColeccionHecho {
+  -coleccionId: Coleccion
+  -hechoId: Hecho
+  -consenso: Boolean
+}
+interface CriterioDePertenencia {
+  +aplicaA(hecho: Hecho): boolean
+}
+class CriterioCategoria implements CriterioDePertenencia {
+  -categoriaId: Categoria
+  +aplicaA(hecho: Hecho): boolean
+}
+class CriterioUbicacion implements CriterioDePertenencia {
+  -latitud: Double
+  -longitud: Double
+  +aplicaA(hecho: Hecho): boolean
+}
+class CriterioRangoFechas implements CriterioDePertenencia {
+  -fechaInicio: LocalDate
+  -fechaFin: LocalDate
+  +aplicaA(hecho: Hecho): boolean
+}
+class Hecho {
+  -id: Long
+  -activo: Boolean
+  -titulo: String
+  -descripcion: String
+  -categoria: Categoria
+  -etiquetas: List<Etiqueta>
+  -latitud: Double
+  -longitud: Double
+  -fechaAcontecimiento: LocalDate
+  -fechaCarga: LocalDate
+  -esAnonimo: Boolean
+  -origen: List<Origen>
+  -ColeccionHecho: List<ColeccionHecho>
+  +Hecho()
+}
+
+class Categoria {
+  -id: Long
+  -nombre: String
+}
+
+class Etiqueta {
+  -id: Long
+  -nombre: String
+  +Etiqueta(nombre: String)
+}
+
+class Origen {
+  -tipoFuente: TipoFuente
+  -raiz: String
+  +Origen(tipoFuente: TipoFuente, raiz: String)
+}
+
+class SolicitudDeEliminacion {
+  -id: Long
+  -idSolicitante: Long
+  -hechoSolicitado: Hecho
+  -motivo: String
+  -estado: Estado
+  -fecha: LocalDate
+}
+
+class FuenteDinamica {
+  -webClient: WebClient
+  -categoriaService: ICategoriaService
+  -tipoFuente: TipoFuente = CONTRIBUYENTE
+  +importarHechos(): Mono<List<Hecho>>
+}
+
+class FuenteEstatica {
+  -webClient: WebClient
+  -categoriaService: ICategoriaService
+  -tipoFuente: TipoFuente = DATASET
+  +importarHechos(): Mono<List<Hecho>>
+}
+
+class FuenteProxy {
+  -webClient: WebClient
+  -categoriaService: ICategoriaService
+  -tipoFuente: TipoFuente = PROXY
+  +importarHechos(): Mono<List<Hecho>>
+}
+
+class AlgoritmoAbsoluta {
+  -tipoAlgoritmo: TipoAlgoritmo = ABSOLUTA
+  +ConsensuarHechos(coleccion: Coleccion): void
+}
+
+class AlgoritmoMayoriaSimple {
+  -tipoAlgoritmo: TipoAlgoritmo = SIMPLE
+  +ConsensuarHechos(coleccion: Coleccion): void
+}
+
+class AlgoritmoMultiplesMenciones {
+  -tipoAlgoritmo: TipoAlgoritmo = MULTIPLE_MENCION
+  +ConsensuarHechos(coleccion: Coleccion): void
+}
+
+class AlgoritmoNulo {
+  -tipoAlgoritmo: TipoAlgoritmo = NINGUNO
+  +ConsensuarHechos(coleccion: Coleccion): void
+}
+
+class DetectorDeSpamTFIDF {
+  -corpus: List<String>
+  -stopWords: Set<String>
+  -palabrasProhibidas: List<String>
+  -umbralDeSpam: Double
+  +esSpam(texto: String): boolean
+}
+
+' Relaciones
+Coleccion "1" *-- "1" CriterioDePertenencia
+Coleccion "1" o-- "*" Fuente
+Coleccion "1" --> "1" AlgoritmoDeConsenso
+Coleccion  "1" --> "*" ColeccionHecho
+Hecho "1" --> "*" ColeccionHecho
+Hecho --> Categoria
+Hecho --> "*" Etiqueta
+Hecho --> "*" Origen
+Origen --> TipoFuente
+
+SolicitudDeEliminacion --> Hecho
+SolicitudDeEliminacion --> Estado
+SolicitudDeEliminacion ..> DetectorDeSpamTFIDF : «use»
+
+FuenteDinamica ..|> Fuente
+FuenteEstatica ..|> Fuente
+FuenteProxy ..|> Fuente
+
+FuenteDinamica --> ICategoriaService
+FuenteEstatica --> ICategoriaService
+FuenteProxy --> ICategoriaService
+
+AlgoritmoAbsoluta ..|> AlgoritmoDeConsenso
+AlgoritmoMayoriaSimple ..|> AlgoritmoDeConsenso
+AlgoritmoMultiplesMenciones ..|> AlgoritmoDeConsenso
+AlgoritmoNulo ..|> AlgoritmoDeConsenso
+
+AlgoritmoAbsoluta --> TipoAlgoritmo
+AlgoritmoMayoriaSimple --> TipoAlgoritmo
+AlgoritmoMultiplesMenciones --> TipoAlgoritmo
+AlgoritmoNulo --> TipoAlgoritmo
+
+DetectorDeSpamTFIDF ..|> DetectorDeSpam
+
+@enduml

@@ -1,0 +1,90 @@
+<div th:fragment="detalle" class="col-12">
+
+    <div class="mb-4 mt-4">
+        <h4 class="fw-bold text-primary">Desglose de Métricas</h4>
+        <hr>
+    </div>
+
+    <div th:if="${estadistica != null}" class="row">
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-geo-alt-fill"></i> Top Provincias</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            th:each="prov : ${estadistica.topProvincia}">
+                            <span th:text="${prov.idColeccion}"></span>
+                            <span th:text="${prov.tituloColeccion}"></span>
+                            <span th:text="${prov.provincia}"></span>
+                            <span class="badge bg-primary rounded-pill" th:text="${prov.cantidad}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="bi bi-tags-fill"></i> Categoría Principal</h5>
+                </div>
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h3 class="fw-bold text-dark mb-1" th:text="${estadistica.topCategoria.categoria}"></h3>
+                    <p class="text-muted">Total incidentes: <span class="fw-bold" th:text="${estadistica.topCategoria.cantidad}"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">Distribución Geográfica</h5>
+                </div>
+                <div class="card-body">
+                    <div th:each="item : ${estadistica.provinciaPorCategoria}" class="d-flex justify-content-between border-bottom py-2">
+                        <span>
+                            <strong th:text="${item.provincia}"></strong>
+                            <small class="text-muted" th:text="'(' + ${item.categoria} + ')'"></small>
+                        </span>
+                        <span class="fw-bold" th:text="${item.cantidad}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Hora Pico</h5>
+                </div>
+                <div class="card-body">
+                    <div th:each="hora : ${estadistica.horaPicoPorCategoria}" class="mb-3">
+                        <h6 class="fw-bold" th:text="${hora.categoria}"></h6>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 75%;"
+                                 th:text="'Hora: ' + ${hora.hora} + 'hs'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                <div>
+                    <strong>Reportes de Spam detectados:</strong>
+                    <span class="fs-5 fw-bold ms-2" th:text="${estadistica.cantidadSpam}"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div th:if="${estadistica == null}" class="alert alert-warning mt-3">
+        <i class="bi bi-info-circle"></i> No hay estadísticas generadas aún.
+    </div>
+</div>

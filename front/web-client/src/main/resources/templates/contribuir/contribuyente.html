@@ -1,0 +1,11 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<section th:fragment="contenido" id="view-contribuyente" class="py-5">
+    <div th:replace="contribuir/contribuyente_titulo :: titulo"></div>
+    <div class="row g-4">
+        <!-- FORMULARIO -->
+        <div th:replace="contribuir/contribuyente_nuevoHecho :: nuevoHecho"></div>
+        <!-- MIS HECHOS -->
+        <div th:replace="contribuir/contribuyente_misHechos :: misHechos"></div>
+    </div>
+</section>
+</html>

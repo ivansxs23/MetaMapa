@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Script para arrancar los microservicios en orden, esperando que cada uno esté healthy
+
+echo "=== INICIANDO MICRO SERVICIOS EN ORDEN ==="
+
+# Función para esperar a que un puerto esté abierto
+wait_for_port() {
+    local port=$1
+    local service=$2
+    echo "Esperando a que $service esté listo en puerto $port..."
+    while ! nc -z localhost $port > /dev/null 2>&1; do
+        sleep 2
+    done
+    echo "$service listo en puerto $port"
+}
+
+# 1. Fuente Estática (puerto 8082) - la más crítica para el agregador
+nohup java -jar api-rest/fuenteEstatica/target/fuenteEstatica-0.0.1-SNAPSHOT.jar > fuenteEstatica.log 2>&1 &
+wait_for_port 8082 "Fuente Estática"
+
+# 2. Fuente Dinámica (8081)
+nohup java -jar api-rest/fuenteDinamica/target/fuenteDinamica-0.0.1-SNAPSHOT.jar > fuenteDinamica.log 2>&1 &
+wait_for_port 8081 "Fuente Dinámica"
+
+# 3. Fuente Proxy (8083)
+nohup java -jar api-rest/fuenteProxy/target/fuenteProxy-0.0.1-SNAPSHOT.jar > fuenteProxy.log 2>&1 &
+wait_for_port 8083 "Fuente Proxy"
+
+# 4. Estadísticas (8089)
+nohup java -jar api-rest/estadistica/target/estadistica-0.0.1-SNAPSHOT.jar > estadistica.log 2>&1 &
+wait_for_port 8089 "Estadísticas"
+
+# 5. Auth (8085)
+nohup java -jar api-rest/auth-usuario/target/auth-usuario-0.0.1-SNAPSHOT.jar > auth.log 2>&1 &
+wait_for_port 8085 "Auth"
+
+# 6. Agregador (8080) - ahora sí puede importar datos sin fallar
+nohup java -jar api-rest/agregador/target/agregador-0.0.1-SNAPSHOT.jar > agregador.log 2>&1 &
+wait_for_port 8080 "Agregador"
+
+# 7. Frontend (web-client) - puerto 8087
+nohup java -jar front/web-client/target/web-client-0.0.1-SNAPSHOT.jar > web-client.log 2>&1 &
+
+echo "=== TODOS LOS SERVICIOS ARRANCADOS ==="
+echo "Frontend accesible en http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):8087"
+echo "Logs en *.log (usá tail -f nombre.log para ver en vivo)"

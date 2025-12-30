@@ -1,0 +1,18 @@
+<html th:replace="~{layout/base ::html}" lang="es">
+<section th:fragment="contenido" class="py-5">
+    <div class="container">
+        <h2 th:text="${pageTitle}">Reportar Hecho</h2>
+        <form th:action="@{/solicitudes}" th:object="${solicitudDto}" method="post">
+            <input type="hidden" th:field="*{idHecho}" />
+
+            <div class="mb-3">
+                <label for="motivo" class="form-label">Motivo *</label>
+                <textarea class="form-control" id="motivo" th:field="*{motivo}" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Enviar Solicitud</button>
+            <a th:href="@{/hechos}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</section>
+</html>

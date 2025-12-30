@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}" lang="es">
+    <section th:fragment="contenido">
+        <div class="container mt-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <!-- Header -->
+                    <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap gap-2">
+                        <div>
+                            <h2 class="mb-1" th:text="${hecho.titulo}">Título de la colección</h2>
+                        </div>
+                        <!-- Botón volver -->
+                        <div th:if="(${coleccionId != null})" class="d-flex">
+                            <a th:href="@{'/colecciones/'+ ${coleccionId}}" class="btn btn-secondary">
+                                ← Volver
+                            </a>
+                        </div>
+                        <div th:if="(${coleccionId == null})" class="d-flex">
+                            <a th:href="@{/hechos}" class="btn btn-secondary">
+                                ← Volver
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-4" th:text="${hecho.descripcion}">Descripción del hecho</p>
+
+                    <!-- Datos principales -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p><strong>Categoría:</strong> <span th:text="${hecho.categoria.getNombre()}">Categoría</span></p>
+                            <p><strong>Fecha del acontecimiento:</strong>
+                                <span th:text="${hecho.fechaAcontecimiento}">Fecha</span>
+                            </p>
+                            <p><strong>Fecha de carga:</strong>
+                                <span th:text="${hecho.fechaCarga}">Fecha</span>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <p><strong>Latitud:</strong> <span th:text="${hecho.latitud}">0.0</span></p>
+                            <p><strong>Longitud:</strong> <span th:text="${hecho.longitud}">0.0</span></p>
+                            <p><strong>Es anónimo:</strong> <span th:text="${hecho.esAnonimo ? 'Sí' : 'No'}">No</span></p>
+                        </div>
+                    </div>
+                    <!-- Multimedia -->
+                    <div class="mt-4">
+                        <h5>Multimedia</h5>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <div th:each="m : ${hecho.archivos}">
+                                <!-- Imagen -->
+                                <img th:if="${m.tipo.name() == 'IMAGEN'}"
+                                     th:src="${m.url}"
+                                     class="img-fluid rounded"
+                                     style="max-width: 250px" alt="imagen del hecho"/>
+
+                                <!-- Video -->
+                                <video th:if="${m.tipo.name() == 'VIDEO'}"
+                                       th:src="${m.url}"
+                                       controls
+                                       class="rounded"
+                                       style="max-width: 250px">
+                                </video>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botones de acción -->
+                    <div  class="d-flex justify-content-end gap-2 m-3">
+                        <a th:href="@{/solicitudes/crear/{id}(id=${hecho.id})}" class="btn btn-sm btn-danger">
+                            Reportar
+                        </a>
+                        <a th:if="(${hecho.esEditable})"
+                           type="button" class="btn btn-sm btn-warning"
+                           th:href="@{'/hechos/'+ ${hecho.id} +'/editar'}">
+                            Editar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</html>

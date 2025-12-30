@@ -1,0 +1,29 @@
+<!-- templates/contribuir/contribuyente_confirmacion.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es"
+      th:replace="~{layout :: contenido}">
+<div th:fragment="contenido">
+
+    <div class="card p-5 text-center shadow-sm mx-auto" style="max-width: 600px;">
+        <h2 class="text-success mb-3">✅ ¡Hecho registrado con éxito!</h2>
+
+        <p class="lead">Tu contribución fue recibida correctamente.</p>
+
+        <hr class="my-4"/>
+
+        <p><strong>Título:</strong> <span th:text="${hechoCreado.titulo}"></span></p>
+        <p><strong>Categoría:</strong> <span th:text="${hechoCreado.categoriaNombre}"></span></p>
+        <p><strong>Fecha:</strong> <span th:text="${#temporals.format(hechoCreado.fecha, 'dd/MM/yyyy')}"></span></p>
+
+        <div class="mt-4">
+            <a th:href="@{/contribuir/contribuyente}" class="btn btn-outline-secondary me-2">
+                Cargar otro hecho
+            </a>
+            <a th:href="@{/}" class="btn btn-secondary">
+                Volver al inicio
+            </a>
+        </div>
+    </div>
+
+</div>
+</html>
